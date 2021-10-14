@@ -6,7 +6,7 @@
 
   npx react-native run-android
   
-# iOS (NOT TESTED):
+# iOS:
 
   npm install
   
