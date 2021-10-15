@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {useSelector} from 'react-redux';
-import {Center} from '../../components';
+import {Center, SelectImage, Divider} from '../../components';
 
 const HomeScreen = () => {
   const username = useSelector(state => state.user.username);
@@ -11,6 +11,8 @@ const HomeScreen = () => {
   return (
     <Center>
       <Text style={{color: 'black'}}>{username}</Text>
+      <Divider/>
+      <SelectImage />
     </Center>
   );
 };
