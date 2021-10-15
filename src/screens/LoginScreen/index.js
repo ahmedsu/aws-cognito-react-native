@@ -12,7 +12,7 @@ import {showMessage} from 'react-native-flash-message';
 import Modal from '../../components/Modal';
 import {useDispatch} from 'react-redux';
 import {signIn} from '../../redux/actions/authActions';
-import {setUsername as setUsernameRedux} from '../../redux/actions/userActions';
+import {setUsername as setUsernameRedux, setUserToken} from '../../redux/actions/userActions';
 
 const LoginScreen = ({navigation}) => {
   const [username, setUsername] = useState('');
@@ -39,6 +39,7 @@ const LoginScreen = ({navigation}) => {
         console.log('login result', result);
         const accessToken = result.getAccessToken().getJwtToken();
         console.log('username', username);
+        dispatch(setUserToken(accessToken))
         dispatch(setUsernameRedux(username));
         dispatch(signIn(accessToken));
       },
